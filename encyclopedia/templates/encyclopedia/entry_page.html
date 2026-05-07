@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    {% if found %}
+
+        {{content |safe}}
+    
+
+        <a href="{% url 'edit' title=title %}">Edit</a> 
+
+    {% else %}
+
+        <p>{{ title.capitalize }} does not exist</p>
+
+    {% endif %}
+
+{% endblock %}
